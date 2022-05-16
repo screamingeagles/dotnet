@@ -1,7 +1,8 @@
+using System;
 public abstract class BillingBase
 {
-    const float MINIMUM_PER_HOUR_RATE = 7.25;       // Federally mandated US minimium per hour wage
-    public int getWorkingDays()
+    public const float MINIMUM_PER_HOUR_RATE = 7.25F;       // Federally mandated US minimium per hour wage
+    protected int getWorkingDays()
     {
         Random rand = new Random();
         return rand.Next(28, 31);
@@ -10,7 +11,7 @@ public abstract class BillingBase
 }
 public class PermanentEmployeeWage : BillingBase
 {
-    private int getWorkingDays()
+    public new int getWorkingDays()
     {
         return base.getWorkingDays();
     }
@@ -21,7 +22,7 @@ public class PermanentEmployeeWage : BillingBase
 }
 public class TemporaryEmployeeWage : BillingBase
 {
-    private int getWorkingDays()
+    public new int getWorkingDays()
     {
         return base.getWorkingDays();
     }
@@ -35,6 +36,6 @@ public class ContractualEmployeeWage : BillingBase
 {
     public override float CalculatePayableAmount(int na)
     {
-        return (MINIMUM_PER_HOUR_RATE + 25) * 30.25;
+        return (MINIMUM_PER_HOUR_RATE + 25) * 30.25F;
     }
 }
