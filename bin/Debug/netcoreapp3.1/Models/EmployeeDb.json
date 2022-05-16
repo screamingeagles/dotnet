@@ -1,0 +1,26 @@
+[
+   {
+      "ID": 3291,
+      "Name": "KHAN",
+      "Type": "Permanent",
+      "StartDate": "01-Jan-2022",
+      "Department": "HR",
+      "Designation": "Officer"
+   },
+   {
+      "ID": 3292,
+      "Name": "QURESH",
+      "Type": "Temporary",
+      "StartDate": "01-Jan-2022",
+      "Department": "Administration",
+      "Designation": "Manger"
+   },
+   {
+      "ID": 3293,
+      "Name": "JOHN",
+      "Type": "Contractual",
+      "StartDate": "01-Jan-2022",
+      "Department": "Field",
+      "Designation": "Dispatcher"
+   }
+]

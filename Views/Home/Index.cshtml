@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    td {
+        border-bottom: 1px solid;
+    }
+
+    th {
+        border-bottom: 2px solid;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4">Employee List</h1>
+    <div>
+        <table style="width:100%; border: 1px solid;">
+            <thead>
+                <tr>
+                    <th>Worker ID</th>
+                    <th>Worker Name</th>
+                    <th>Designation</th>
+                    <th>Department</th>
+                    <th>Issue Date</th>
+                    <th>Expiry Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (EmployeeDetails ed in @Model)
+                {
+                    <tr>
+                        <td>@ed.EmployeeID</td>
+                        <td>@ed.EmployeeName</td>
+                        <td>@ed.EmployeeDesignation</td>
+                        <td>@ed.EmployeeDepartment</td>
+                        <td>@ed.IssueDate</td>
+                        <td>@ed.ExpiryDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
