@@ -1,0 +1,63 @@
+﻿@model EmployeeDetails
+@{
+    ViewData["Title"] = "Edit Page";
+}
+<style>
+    td {
+        border-bottom: 1px solid;
+    }
+
+    th {
+        border-bottom: 2px solid;
+    }
+</style>
+@using (Html.BeginForm("Update", "Home", FormMethod.Post)){
+    @Html.HiddenFor(m => m.EmployeeID)
+    <div class="text-center">
+        <h1 class="display-4">Update Employee Record</h1>
+        <div class="row">
+            <div class="col-md-2">Employee ID: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Model.EmployeeID</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Employee Name: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Html.TextBoxFor(m => m.EmployeeName, new { @class = "form-control" })</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">Employee Designation: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Html.TextBoxFor(m => m.EmployeeDesignation, new { @class = "form-control" })</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">Employee Department: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Html.TextBoxFor(m => m.EmployeeDepartment, new { @class = "form-control" })</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">ID Issue Date: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Model.IssueDate</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">ID Expiry Date: </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2">@Model.ExpiryDate</div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-md-2"><input type="submit" name="Save" value="Save" /></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-2"><a href="~/Home/Index">Cancel</a></div>
+            <div class="col-md-7">&nbsp;</div>
+        </div>
+    </div>
+}
