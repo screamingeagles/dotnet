@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
 <style>
@@ -22,6 +22,7 @@
                     <th>Department</th>
                     <th>Issue Date</th>
                     <th>Expiry Date</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +35,13 @@
                         <td>@ed.EmployeeDepartment</td>
                         <td>@ed.IssueDate</td>
                         <td>@ed.ExpiryDate</td>
+                        <td><a href="~/Home/Edit/@ed.EmployeeID"  onclick="return confirm('Are you sure you want to Modify this record?')">
+                                Edit
+                            </a>
+                            | 
+                            <a href="~/Home/Delete/@ed.EmployeeID"  onclick="return confirm('Are you sure you want to delete?')">
+                                Delete
+                            </a></td>
                     </tr>
                 }
             </tbody>
