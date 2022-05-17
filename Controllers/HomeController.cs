@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -50,6 +50,41 @@ namespace dotnet.Controllers
             // return the view with the list as model
             return View(result);
         }
+
+        
+        public IActionResult Edit(string id)
+        {
+            // here use the id to the employee object
+            PersonBase p = t.GetEmployeeFromDb(id);
+
+            WorkerFactory factory = new WorkerFactory();
+
+            IWorker worker = factory.GetEmployee(p.Type);
+
+            // get the email details based on the class
+            EmployeeDetails item = worker.GetEmployeeDetails(p);
+
+            // return Edit View
+            return View(item);
+        }
+
+        
+        public IActionResult Update(EmployeeDetails emp)
+        {
+            t.UpdateEmployeeToDb(emp);                  // just update to DB            
+            return RedirectToAction("Index", "Home");   // after update just return to list
+        }
+
+        public IActionResult Delete(string id)
+        {
+            // here use the id to delete the user
+            // code comes here... 
+
+            // return the view to Index Page
+            return RedirectToAction("Index", "Home", new {@id=id});
+        }
+
+
 
         public IActionResult Privacy()
         {
