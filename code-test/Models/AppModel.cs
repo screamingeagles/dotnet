@@ -19,7 +19,7 @@ namespace code_test.Models
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
-            modelBuilder.HasDefaultSchema("TKS_PAS_DBA");
+            modelBuilder.HasDefaultSchema("DBA");
         }
 
         public IDbSet<T_CATEGORY> CATEGORIES { get; set; }
